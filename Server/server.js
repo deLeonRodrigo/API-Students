@@ -36,7 +36,7 @@ app.post('/insertStudents', (req, res) => {
 app.get('/', (req, res) => {
   //dbconnection.get();
   setTimeout(()=>{
-    res.render(__dirname + '/Views/index', 
+    res.render('index', 
     {
      // Students: dbconnection.students()
     }
