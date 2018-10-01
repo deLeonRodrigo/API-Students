@@ -3,7 +3,9 @@ h1 Welcome to student CRUD!
     h1 Estudiantes
         each Student in Students
             table(border = 1)
-                tr 
+                    tr 
+                        td Id: 
+                        td #{Student._id}
                     tr 
                         td Nombre: 
                         td #{Student.Name}
