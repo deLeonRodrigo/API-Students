@@ -7,7 +7,7 @@ var _students;
 function openConnection(){
     MongoClient.connect(urlDB, function(err, db) {
         assert.equal(null, err);
-        db = db.db('Students');
+        db = db.db('students');
         console.log("Connected successfully to server");
     });
 }
