@@ -34,11 +34,11 @@ app.post('/insertStudents', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  //dbconnection.get();
+  dbconnection.get();
   setTimeout(()=>{
     res.render('index', 
     {
-     // Students: dbconnection.students()
+      Students: dbconnection.students()
     }
     )},
   3000
