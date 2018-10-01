@@ -34,11 +34,11 @@ app.post('/insertStudents', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  dbconnection.get();
+  //dbconnection.get();
   setTimeout(()=>{
-    res.render('C:\\Users\\rodri\\OneDrive - Universidad De La Salle Bajio\\Personal\\CRUD_NodeJS_Sockets\\views\\index', 
+    res.render(__dirname + '/Views/index', 
     {
-      Students: dbconnection.students()
+     // Students: dbconnection.students()
     }
     )},
   3000
