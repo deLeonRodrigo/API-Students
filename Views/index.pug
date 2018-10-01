@@ -1,0 +1,23 @@
+h1 Welcome to student CRUD!
+#listStudents
+    h1 Estudiantes
+        each Student in Students
+            table(border = 1)
+                tr 
+                    tr 
+                        td Nombre: 
+                        td #{Student.Name}
+                    tr 
+                        td Apellido: 
+                        td #{Student.LastName}
+                    br
+#insertStudents
+    form(id='form-Insert' method='POST' action='insertStudents')
+                div.form-group
+                label(for='Name') Nombre:
+                input#name.form-control(type='text', name='Name')
+                div.form-group
+                label(for='LastName') Apellido:
+                input#name.form-control(type='text', name='LastName')
+                div.form-group
+                button.btn.btn-primary(type='submit') Insertar
