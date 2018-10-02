@@ -1,3 +1,11 @@
+script.
+    var setId = function(val, val2, val3){
+        document.forms[0].elements[0].value = val;
+        document.forms[0].elements[1].value = val2;
+        document.forms[0].elements[2].value = val3;
+        document.forms[2].elements[0].value = val;
+
+    }
 h1 Welcome to student CRUD!
 #listStudents
     h1 Estudiantes
@@ -12,7 +20,24 @@ h1 Welcome to student CRUD!
                 tr 
                     td Apellido: 
                     td #{Student.LastName}
+                tr  
+                    td 
+                        input(type="radio" name="selectStudent" onclick=`setId("${Student._id}", 
+                        "${Student.Name}", "${Student.LastName}")`)
                 br
+#updateStudent
+    form(id='form-Update' method='POST' action='updateStudent')
+        div.form-group
+        label(for='_Id') Id:
+        input#name.form-control(type='text', name='_Id', readonly)
+        div.form-group
+        label(for='Name') Nombre:
+        input#name.form-control(type='text', name='Name')
+        div.form-group
+        label(for='LastName') Apellido:
+        input#name.form-control(type='text', name='LastName')
+        div.form-group
+        button.btn.btn-primary(type='submit') Actualizar                
 #insertStudents
     form(id='form-Insert' method='POST' action='insertStudents')
         div.form-group
@@ -23,3 +48,10 @@ h1 Welcome to student CRUD!
         input#name.form-control(type='text', name='LastName')
         div.form-group
         button.btn.btn-primary(type='submit') Insertar
+#deleteStudent
+    form(id='form-Update' method='POST' action='deleteStudent')
+        div.form-group
+        label(for='_Id') Id:
+        input#name.form-control(type='text', name='_Id', readonly)
+        div.form-group
+        button.btn.btn-primary(type='submit') Eliminar
