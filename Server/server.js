@@ -44,6 +44,7 @@ app.get('/', (req, res) => {
     },
     3000
   );
+  
 });
 
 app.post('/updateStudent', (req, res) => {
